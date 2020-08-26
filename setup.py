@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="django-segno-qr",
-    version="1.0.1",
+    version="1.0.2",
     author="Ideler IT-Service GmbH",
     author_email="hosting@ideler.de",
     description="Django template tag for generating QR codes using segno",

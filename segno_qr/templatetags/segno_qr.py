@@ -1,5 +1,4 @@
 import segno
-from io import BytesIO
 from django import template
 from django.utils.safestring import mark_safe
 
@@ -13,7 +12,5 @@ def segno_qr(content, size=5, border=None, dark="black",
     kwargs.update({'micro': micro})
 
     qr = segno.make(content, **kwargs)
-    svg = BytesIO()
-    qr.save(svg, 'svg', scale=size, dark=dark, light=light)
-    result = svg.getvalue().decode('utf8')
+    result = qr.svg_inline(scale=size, dark=dark, light=light)
     return mark_safe(result)
